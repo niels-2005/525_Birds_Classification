@@ -1,0 +1,2 @@
+model,accuracy,f1-score_weighted,precision_weighted,recall_weighted
+3,98.44,98.42,98.8,98.44

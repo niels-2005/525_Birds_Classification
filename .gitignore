@@ -1,0 +1,7 @@
+dataset
+hparam_tuning
+notebooks
+tb_logs
+tb_training_logs 
+trained_models
+Dockerfile

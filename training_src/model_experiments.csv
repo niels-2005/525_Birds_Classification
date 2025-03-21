@@ -1,0 +1,5 @@
+Model,Val Acc,Epoch Time,Total_params,Train_Params,Input Shape
+EfficientNetB0,0.8715,71,4512432,462861,"(224, 224, 3)"
+Xception,0.7383,230,21520949,659469,"(299, 299, 3)"
+ResNet50,0.7065,105,24247181,659469,"(224, 224, 3)"
+BasicCNN,0.0197,77,25918541,25918541,"(224, 224, 3)"
