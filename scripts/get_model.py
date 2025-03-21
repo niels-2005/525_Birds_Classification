@@ -9,7 +9,7 @@ EFFICIENTNET_CONFIG = {
 
 MODEL_LAYERS_CONFIG = {
     "data_augmentation_flip": tf.keras.layers.RandomFlip("horizontal"),
-    "dropout_rate": 0.5,
+    "l2_regularization": tf.keras.regularizers.L2(0.01),
     "output_units": 525,
     "output_activation": "softmax",
 }
@@ -57,7 +57,8 @@ def add_model_layers(model, efficient_net):
     model.add(
         tf.keras.layers.Dense(
             units=MODEL_LAYERS_CONFIG["output_units"],
-            activation=MODEL_LAYERS_CONFIG["output_activation"]
+            activation=MODEL_LAYERS_CONFIG["output_activation"],
+            kernel_regularizer=MODEL_LAYERS_CONFIG["l2_regularization"]
         )
     )
     return model
