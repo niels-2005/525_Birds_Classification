@@ -143,25 +143,35 @@ You can test the trained model on your own imagfes by following the steps below:
     cd 525_Birds_Classification/
     ```
 
-3. #### Install Dependencies
+3. #### Make Environment
+    ```bash
+    conda create --name=test python=3.10
+    ```
+
+4. #### Activate Environment
+    ```bash
+    conda activate test
+    ```
+
+5. #### Install Dependencies
     Navigate to the project directory and install the required dependencies:
     ```bash
     pip install -r requirements.txt
     ```
 
-4. #### Navigate to the Scripts Directory
+6. #### Navigate to the Scripts Directory
     Change your working directory to **scipts/** where the predction script is located:
     ```bash
     cd scripts/
     ```
 
-5. #### Run the Prediction Script
+7. #### Run the Prediction Script
     Run the following command to test the model on a sample_image. Replace the **-p** flag with the path to your image
     ```bash
     python predict_sample.py -p=../abbotts_bobby_sample.jpeg
     ```
 
-6. #### Output
+8. #### Output
     The script will output the model's prediction along with the image path, like this:
     ```bash
     Image Path: ../abbotts_bobby_sample.jpeg, Model Prediction: ABBOTTS BOOBY
