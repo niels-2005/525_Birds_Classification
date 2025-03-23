@@ -1,6 +1,5 @@
 import argparse
 
-import tensorflow as tf
 from get_ds_class_names import get_ds_class_names
 from get_image import get_image
 from get_prediction_class_name import get_prediction_class_name
