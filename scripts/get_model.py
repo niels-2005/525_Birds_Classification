@@ -25,11 +25,12 @@ def build_efficientnet_model():
     """
     Builds and returns an EfficientNetB0 model with configurations specified in EFFICIENTNET_CONFIG.
 
-    The EfficientNet model is initialized with the provided parameters such as
-    input shape, pooling type, and whether the top layers should be included.
+    The function:
+    - Initializes an EfficientNetB0 model with predefined configurations.
+    - Sets whether the model's weights should be trainable.
 
     Returns:
-        tf.keras.Model: The EfficientNetB0 model with the specified configurations.
+        tf.keras.Model: The EfficientNetB0 model configured according to EFFICIENTNET_CONFIG.
     """
     efficient_net = tf.keras.applications.EfficientNetB0(
         include_top=EFFICIENTNET_CONFIG["include_top"],
@@ -42,15 +43,20 @@ def build_efficientnet_model():
 
 def add_model_layers(model, efficient_net):
     """
-    Adds layers to a given model, including data augmentation, EfficientNet,
+    Adds layers to a given model, including data augmentation, EfficientNet as a feature extractor,
     and a dense output layer.
+
+    The function:
+    - Adds a data augmentation layer.
+    - Incorporates EfficientNetB0 as a feature extractor.
+    - Appends a dense output layer with specified activation and regularization.
 
     Args:
         model (tf.keras.Sequential): The base model to which layers will be added.
-        efficient_net (tf.keras.Model): The EfficientNetB0 model to be used as a feature extractor.
+        efficient_net (tf.keras.Model): The EfficientNetB0 model used for feature extraction.
 
     Returns:
-        tf.keras.Sequential: The updated model with the added layers.
+        tf.keras.Sequential: The updated model with added layers.
     """
     model.add(MODEL_LAYERS_CONFIG["data_augmentation_flip"])
     model.add(efficient_net)

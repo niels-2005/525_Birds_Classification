@@ -172,13 +172,13 @@ class HyperparameterTuner:
 
     def start_tuner_search(self):
         """
-        Starts the hyperparameter tuning process using the Keras Tuner.
+        Runs the hyperparameter tuning process.
 
+        The function:
         - Initializes the tuner.
-        - Retrieves datasets.
+        - Loads training and validation datasets.
         - Sets up the TensorBoard callback.
-        - Runs the search for optimal hyperparameters.
-        - Saves the best hyperparameters.
+        - Executes the search for optimal hyperparameters.
 
         Returns:
             None
