@@ -1,4 +1,4 @@
-import tensorflow as tf 
+import tensorflow as tf
 
 
 def load_model(model_path: str):

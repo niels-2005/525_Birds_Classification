@@ -1,5 +1,5 @@
-from tensorflow.keras.preprocessing import image_dataset_from_directory  # type: ignore
-
+from tensorflow.keras.preprocessing import \
+    image_dataset_from_directory  # type: ignore
 
 DATA_CONFIG = {
     "train_path": "../dataset/train",
@@ -60,7 +60,7 @@ def get_test_dataset():
 
     The function:
     - Loads the test dataset using `image_dataset_from_directory`.
-    - Uses configurations from DATA_CONFIG to set parameters such as 
+    - Uses configurations from DATA_CONFIG to set parameters such as
       image size, batch size, and whether shuffling is applied.
 
     Returns:

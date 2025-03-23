@@ -25,7 +25,7 @@ def build_efficientnet_model():
     """
     Builds and returns an EfficientNetB0 model with configurations specified in EFFICIENTNET_CONFIG.
 
-    The EfficientNet model is initialized with the provided parameters such as 
+    The EfficientNet model is initialized with the provided parameters such as
     input shape, pooling type, and whether the top layers should be included.
 
     Returns:
@@ -42,7 +42,7 @@ def build_efficientnet_model():
 
 def add_model_layers(model, efficient_net):
     """
-    Adds layers to a given model, including data augmentation, EfficientNet, 
+    Adds layers to a given model, including data augmentation, EfficientNet,
     and a dense output layer.
 
     Args:
@@ -58,7 +58,7 @@ def add_model_layers(model, efficient_net):
         tf.keras.layers.Dense(
             units=MODEL_LAYERS_CONFIG["output_units"],
             activation=MODEL_LAYERS_CONFIG["output_activation"],
-            kernel_regularizer=MODEL_LAYERS_CONFIG["l2_regularization"]
+            kernel_regularizer=MODEL_LAYERS_CONFIG["l2_regularization"],
         )
     )
     return model

@@ -1,28 +1,26 @@
-from get_data import get_training_datasets
-import tensorflow as tf
 import keras_tuner
-from save_load_json import save_file_as_json
+import tensorflow as tf
+from get_data import get_training_datasets
 
 
 class HyperparameterTuner:
     """
     A class for hyperparameter tuning of an EfficientNet-based deep learning model.
 
-    This class utilizes Keras Tuner for hyperparameter optimization, 
+    This class utilizes Keras Tuner for hyperparameter optimization,
     including data augmentation options, model architecture, and training configurations.
 
     Attributes:
-        Various hyperparameter configurations related to the EfficientNet model, 
+        Various hyperparameter configurations related to the EfficientNet model,
         data augmentation, model architecture, optimizer, and tuning process.
     """
 
     def __init__(self):
         """
-        Initializes the HyperparameterTuner with predefined hyperparameter ranges 
+        Initializes the HyperparameterTuner with predefined hyperparameter ranges
         and configurations for model tuning.
         """
         self.tensorboard_log_dir = "../tb_logs"
-        self.hparams_json_path = "../config/best_hparams.json"
         self.efficientnet_input_shape = (224, 224, 3)
         self.efficientnet_include_top = False
         self.efficientnet_trainable = False
@@ -195,20 +193,6 @@ class HyperparameterTuner:
             callbacks=[tensorboard_callback],
         )
         self.save_best_hyperparameters(tuner)
-
-    def save_best_hyperparameters(self, tuner):
-        """
-        Saves the best found hyperparameters to a JSON file.
-
-        Args:
-            tuner (keras_tuner.RandomSearch): The trained tuner instance.
-
-        Returns:
-            None
-        """
-        best_params = tuner.get_best_hyperparameters()[0].values
-        save_file_as_json(self.hparams_json_path, best_params)
-
 
 
 if __name__ == "__main__":

@@ -1,14 +1,21 @@
 import os
-from load_model import load_model
+
+from calculate_metrics import calculate_metrics
 from get_data import get_test_dataset
 from get_labels import get_actual_labels, get_predicted_labels
-from calculate_metrics import calculate_metrics
+from load_model import load_model
 
 EVALUATION_CONFIG = {
     "metrics_save_folder": "../model_evaluation",
     "metrics_average": "weighted",
-    "model_paths": ["../trained_model_1/model.keras", "../trained_model_2/model.keras", "../trained_model_3/model.keras", "../trained_model_4/model.keras"]
+    "model_paths": [
+        "../trained_model_1/model.keras",
+        "../trained_model_2/model.keras",
+        "../trained_model_3/model.keras",
+        "../trained_model_4/model.keras",
+    ],
 }
+
 
 def check_if_folder_exist():
     """
@@ -40,14 +47,14 @@ def evaluate_model():
     for i, path in enumerate(EVALUATION_CONFIG["model_paths"]):
         model = load_model(path)
         y_pred = get_predicted_labels(model, test_dataset)
-        calculate_metrics(y_true, y_pred, save_folder=EVALUATION_CONFIG["metrics_save_folder"], model_i=i+1, average=EVALUATION_CONFIG["metrics_average"])
+        calculate_metrics(
+            y_true,
+            y_pred,
+            save_folder=EVALUATION_CONFIG["metrics_save_folder"],
+            model_i=i + 1,
+            average=EVALUATION_CONFIG["metrics_average"],
+        )
 
 
 if __name__ == "__main__":
     evaluate_model()
-
-
-
-
-
-

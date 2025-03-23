@@ -2,7 +2,6 @@ from get_data import get_training_datasets
 from get_model import build_model
 from get_training_callbacks import get_training_callbacks
 
-
 MODEL_TRAINING_CONFIG = {"epochs": 50}
 
 
