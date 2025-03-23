@@ -138,25 +138,30 @@ You can test the trained model on your own imagfes by following the steps below:
     git clone git@github.com:niels-2005/525_Birds_Classification.git
     ```
 
-2. #### Install Dependencies
+2. #### Navigate to the Repository Directory
+    ```bash
+    cd 525_Birds_Classification/
+    ```
+
+3. #### Install Dependencies
     Navigate to the project directory and install the required dependencies:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. #### Navigate to the Scripts Directory
+4. #### Navigate to the Scripts Directory
     Change your working directory to **scipts/** where the predction script is located:
     ```bash
     cd scripts/
     ```
 
-4. #### Run the Prediction Script
+5. #### Run the Prediction Script
     Run the following command to test the model on a sample_image. Replace the **-p** flag with the path to your image
     ```bash
     python predict_sample.py -p=../abbotts_bobby_sample.jpeg
     ```
 
-5. #### Output
+6. #### Output
     The script will output the model's prediction along with the image path, like this:
     ```bash
     Image Path: ../abbotts_bobby_sample.jpeg, Model Prediction: ABBOTTS BOOBY
