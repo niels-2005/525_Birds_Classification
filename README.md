@@ -129,7 +129,40 @@ The model's inference speed was also measured, showing its efficiency in real-ti
 
 This fine-tuned model demonstrates **state-of-the-art performance** in bird species classification, achieving near-perfect accuracy while maintaining computational efficiency. Further improvements could be explored by training on larger datasets, increasing fine-tuning epochs, and incorporating additional regularization techniques.
 
-## 6. Conclusion & Key Takeaways  
+## Test the Model on Your Own Image
+You can test the trained model on your own imagfes by following the steps below:
+
+1.  #### Clone the Repository
+    First, clone the repository to your local machine:
+    ```bash
+    git clone git@github.com:niels-2005/525_Birds_Classification.git
+    ```
+
+2. #### Install Dependencies
+    Navigate to the project directory and install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. #### Navigate to the Scripts Directory
+    Change your working directory to **scipts/** where the predction script is located:
+    ```bash
+    cd scripts/
+    ```
+
+4. #### Run the Prediction Script
+    Run the following command to test the model on a sample_image. Replace the **-p** flag with the path to your image
+    ```bash
+    python predict_sample.py -p=../abbotts_bobby_sample.jpeg
+    ```
+
+5. #### Output
+    The script will output the model's prediction along with the image path, like this:
+    ```bash
+    Image Path: ../abbotts_bobby_sample.jpeg, Model Prediction: ABBOTTS BOOBY
+    ```
+
+## Conclusion & Key Takeaways  
 
 ### Technologies Used  
 This project was implemented using the following key libraries and frameworks:  
