@@ -129,53 +129,61 @@ The model's inference speed was also measured, showing its efficiency in real-ti
 
 This fine-tuned model demonstrates **state-of-the-art performance** in bird species classification, achieving near-perfect accuracy while maintaining computational efficiency. Further improvements could be explored by training on larger datasets, increasing fine-tuning epochs, and incorporating additional regularization techniques.
 
-## Test the Model on Your Own Image
-You can test the trained model on your own imagfes by following the steps below:
+## Test the Model on Your Own Image 🖼️🔍  
 
-1.  #### Clone the Repository
-    First, clone the repository to your local machine:
-    ```bash
-    git clone git@github.com:niels-2005/525_Birds_Classification.git
-    ```
+You can test the trained model on your own images by following the steps below. The setup supports multiple environments, including **Anaconda** and **virtualenv**, so choose the one that best fits your workflow.  
 
-2. #### Navigate to the Repository Directory
-    ```bash
-    cd 525_Birds_Classification/
-    ```
+### 1️⃣ Clone the Repository  
+First, clone the repository to your local machine:  
+```bash
+git clone https://github.com/niels-2005/525_Birds_Classification.git  
+```
 
-3. #### Make Environment
-    ```bash
-    conda create --name=test python=3.10
-    ```
+### 2️⃣ Navigate to the Repository Directory  
+```bash
+cd 525_Birds_Classification/  
+```
 
-4. #### Activate Environment
-    ```bash
-    conda activate test
-    ```
+### 3️⃣ Set Up a Virtual Environment  
+You can use either **Anaconda** or **virtualenv** to manage dependencies.  
 
-5. #### Install Dependencies
-    Navigate to the project directory and install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+#### Option 1: Using Anaconda  
+```bash
+conda create --name birds_classification python=3.10  
+conda activate birds_classification  
+```
 
-6. #### Navigate to the Scripts Directory
-    Change your working directory to **scipts/** where the predction script is located:
-    ```bash
-    cd scripts/
-    ```
+#### Option 2: Using Virtualenv  
+```bash
+python -m venv birds_classification_env  
+source birds_classification_env/bin/activate  # On macOS/Linux  
+birds_classification_env\Scripts\activate    # On Windows  
+```
 
-7. #### Run the Prediction Script
-    Run the following command to test the model on a sample_image. Replace the **-p** flag with the path to your image
-    ```bash
-    python predict_sample.py -p=../abbotts_bobby_sample.jpeg
-    ```
+### 4️⃣ Install Dependencies  
+Navigate to the project directory and install the required dependencies:  
+```bash
+pip install --upgrade pip  
+pip install -r requirements.txt  
+```
 
-8. #### Output
-    The script will output the model's prediction along with the image path, like this:
-    ```bash
-    Image Path: ../abbotts_bobby_sample.jpeg, Model Prediction: ABBOTTS BOOBY
-    ```
+### 5️⃣ Navigate to the Scripts Directory  
+Change your working directory to **scripts/** where the prediction script is located:  
+```bash
+cd scripts/  
+```
+
+### 6️⃣ Run the Prediction Script  
+To test the model on a sample image, run the following command. Replace the **-p** flag with the path to your own image:  
+```bash
+python predict_sample.py -p ../sample_images/abbotts_bobby_sample.jpeg  
+```
+
+### 7️⃣ Output  
+The script will output the model's prediction along with the image path, like this:  
+```bash
+Image Path: ../sample_images/abbotts_bobby_sample.jpeg, Model Prediction: ABBOTTS BOOBY 
+```
 
 ## Conclusion & Key Takeaways  
 
